@@ -40,16 +40,13 @@ class Loader extends StatelessWidget {
       _currentLoader = new OverlayEntry(builder: (context) {
         return Stack(
           children: <Widget>[
-            SafeArea(
-              child: Container(
-                color: overlayColor ?? Color(0x99ffffff),
-                margin: EdgeInsets.only(
-                    top:
-                        !isAppbarOverlay ? overlayFromTop ?? defaultValue : 0.0,
-                    bottom: isBottomBarOverlay
-                        ? 0.0
-                        : overlayFromBottom ?? defaultValue),
-              ),
+            Container(
+              color: overlayColor ?? Color(0x99ffffff),
+              margin: EdgeInsets.only(
+                  top: !isAppbarOverlay ? overlayFromTop ?? defaultValue : 0.0,
+                  bottom: isBottomBarOverlay
+                      ? 0.0
+                      : overlayFromBottom ?? defaultValue),
             ),
             Center(
                 child: Loader._(
